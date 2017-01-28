@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 
 import static org.example.username.accball.R.id.surfaceView;
 
@@ -51,14 +50,6 @@ public class MainActivity extends AppCompatActivity
         mSurfaceView =  (SurfaceView) findViewById(surfaceView);
         mHolder = mSurfaceView.getHolder();
         mHolder.addCallback(this);
-
-
-        mSurfaceView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerSensor();
-            }
-        });
     }
 
     @Override
@@ -111,6 +102,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        registerSensor();
     }
 
     public void registerSensor() {
